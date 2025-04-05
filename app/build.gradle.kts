@@ -33,10 +33,14 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    aaptOptions{
+        noCompress += "tflite"
+    }
 }
 
 dependencies {
-
+    implementation("org.tensorflow:tensorflow-lite:2.12.0")
+    implementation("org.tensorflow:tensorflow-lite-support:0.4.3")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
